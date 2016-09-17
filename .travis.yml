@@ -9,7 +9,6 @@ services:
 
 install:
   - docker-compose build
-  - docker-compose up
 
 env:
   DOCKER_COMPOSE_VERSION: 1.4.2
