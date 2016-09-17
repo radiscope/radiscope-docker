@@ -1,0 +1,30 @@
+nginx:
+    build: ./nginx
+    container_name: proxy
+    links:
+        - node1:node1
+        - node2:node2
+        - node3:node3
+    ports:
+        - "80:80"
+node1:
+    build: ./node
+    container_name: server_1
+    environment:
+        MACHINE_NAME: NodeJS_Node1 
+    ports:
+        - "4000"
+node2:
+    build: ./node
+    container_name: server_2
+    environment:
+        MACHINE_NAME: NodeJS_Node2
+    ports:
+        - "4000"
+node3:
+    build: ./node
+    container_name: server_3
+    environment:
+        MACHINE_NAME: NodeJS_Node3
+    ports:
+        - "4000"
