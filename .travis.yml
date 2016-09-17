@@ -1,9 +1,15 @@
 sudo: required
 
-language: ruby
+language: node_js
+node_js:
+  - stable
 
 services:
   - docker
+
+install:
+  - docker-compose build
+  - docker-compose up
 
 env:
   DOCKER_COMPOSE_VERSION: 1.4.2
